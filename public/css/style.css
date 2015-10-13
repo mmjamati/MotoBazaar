@@ -11,3 +11,15 @@
 .table-nonfluid {
    width: auto;
 }
+
+.header {
+	color: #fff;
+	background-image: url('/public/img/header-img.jpg');
+	background-size: 50%;
+	background-position: center;
+
+}
+
+.header-title {
+	/*background-color: rgba(255,255,255,0.5);*/
+}

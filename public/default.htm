@@ -1,24 +1,26 @@
 ﻿<!DOCTYPE HTML>
 <html ng-app="AngularStore">
   <head>
+    <!-- <base href="/"> -->
     <title>Shopping Cart with AngularJS</title>
 
     <!-- jQuery, Angular -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript" ></script>
      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.5/angular.min.js" type="text/javascript"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-route.js"></script>
+
 
     <!-- Bootstrap -->
     <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet" type="text/css"/>
     <!--<script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js" type="text/javascript" ></script>-->
 
     <!-- AngularStore app -->
-    <script src="js/product.js" type="text/javascript"></script>
-    <script src="js/store.js" type="text/javascript"></script>
-    <script src="js/shoppingCart.js" type="text/javascript"></script>
-    <script src="js/app.js" type="text/javascript"></script>
-    <script src="js/controller.js" type="text/javascript"></script>
-    <link href="css/style.css" rel="stylesheet" type="text/css"/>
+    <script src="public/js/product.js" type="text/javascript"></script>
+    <script src="public/js/store.js" type="text/javascript"></script>
+    <script src="public/js/shoppingCart.js" type="text/javascript"></script>
+    <script src="public/js/app.js" type="text/javascript"></script>
+    <script src="public/js/controller.js" type="text/javascript"></script>
+    <link href="public/css/style.css" rel="stylesheet" type="text/css"/>
   </head>
 
   <body>
@@ -26,16 +28,20 @@
     <!-- 
         bootstrap fluid layout
         (12 columns: span 10, offset 1 centers the content and adds a margin on each side)
+        ALL LINKS HAS TO BE STATIC-REFERENCED
     -->
-    <div class="container-fluid">
-        <div class="row-fluid">
-            <div class="span10 offset1">
-                <h1 class="well" >
-                    <a href="default.htm">
-                        <img src="img/logo.png" height="60" width="60" alt="logo"/>
-                    </a>
-                    MOTO BAZAAR 
-                </h1>
+    <div class="container-fluid" >
+        <div class="row-fluid" >
+            <div class="span10 offset1" >
+                <div class="well text-center header">
+                    <h1 class="header-title">
+                        <a href="/"> 
+                            <img src="public/img/logo-white.png" height="60" width="60" alt="logo"/>
+                        </a>
+                        MotoBazaar 
+                    </h1>
+                    <h5 style="margin-left:50px">   Best Auto Trader in SEA</h5>
+                </div>
                 <div ng-view></div>
             </div>
         </div>

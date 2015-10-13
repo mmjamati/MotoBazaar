@@ -18,14 +18,28 @@ fs.readFile('./default.htm', function (err, html) {
 
 var express = require('express');
 var app = express();
-var path = require('path');
+//var path = require('path');
 
+app.use('/public', express.static(__dirname + '/public'));
+//app.use('/public/js', express.static(__dirname + '/public/js'));
+//app.use('public/img', express.static(__dirname + 'public/img'));
 app.get('/', function(req, res){
   //res.send('hello world');
-  res.sendFile(path.join(__dirname+'/default.htm'));
+  res.sendFile('default.htm',{'root':__dirname + '/public'}, function(err){
+  	if (err) {
+      console.log(err);
+      res.status(err.status).end();
+    }
+    else {
+      console.log('Resposne file sent');
+    }
+  });
+  //res.end();
 });
 
-app.listen(3000);
+app.listen('3000',function(){
+	console.log("Running at localhost:3000");
+});
 
 
 
